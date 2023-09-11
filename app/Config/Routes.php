@@ -14,3 +14,6 @@ $routes->post('/masuk/login', 'Login::login');
 $routes->get('/daftar', 'Registrasi::index');
 $routes->post('/daftar/save', 'Registrasi::register');
 $routes->get('/keluar', 'Logout::index');
+
+// ROUTES HUTANG PIUTANG
+$routes->get('/hutang', 'Hutang::index');

@@ -27,6 +27,7 @@ abstract class BaseController extends Controller
      * @var CLIRequest|IncomingRequest
      */
     protected $request;
+    protected $user;
 
     /**
      * An array of helpers to be loaded automatically upon
@@ -35,7 +36,7 @@ abstract class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = [];
+    protected $helpers = ['halo'];
 
     /**
      * Be sure to declare properties for any property fetch you initialized.
@@ -54,5 +55,9 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+        $db = \Config\Database::connect();
+        $username = session()->username;
+        $builder = $db->table('user');
+        $this->user = $builder->where('username', $username)->get()->getRowArray();
     }
 }
