@@ -17,3 +17,5 @@ $routes->get('/keluar', 'Logout::index');
 
 // ROUTES HUTANG PIUTANG
 $routes->get('/hutang', 'Hutang::index');
+$routes->get('/hutang/riwayat', 'Hutang::riwayatHutang');
+$routes->put('/hutang/lunas/(:num)', 'Hutang::lunaskan/$1');

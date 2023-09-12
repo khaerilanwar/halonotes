@@ -3,7 +3,7 @@
         <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="logo">
-                    <a href="index.html" class="fs-5"><img src="assets/img/halonotes.png" class="me-1" alt="Logo" srcset="">Halo Notes!</a>
+                    <a href="index.html" class="fs-5"><img src="/assets/img/halonotes.png" class="me-1" alt="Logo" srcset="">Halo Notes!</a>
                 </div>
                 <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--system-uicons" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
@@ -34,7 +34,7 @@
             <div class="card-body" style="padding-top: 0; padding-bottom: 0;">
                 <div class="d-flex align-items-center">
                     <div class="avatar avatar-xl" style="margin: 10px;">
-                        <img style="object-fit: cover;" src="assets/img/<?= $user['gambar']; ?>" alt="Face 1">
+                        <img style="object-fit: cover;" src="/assets/img/<?= $user['gambar']; ?>" alt="Face 1">
                     </div>
                     <div class="ms-3 name">
                         <h5 class="font-bold"><?= $user['nama']; ?></h5>

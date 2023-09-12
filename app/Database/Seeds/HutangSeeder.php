@@ -26,6 +26,7 @@ class HutangSeeder extends Seeder
 
         for ($i = 0; $i < count($nominal); $i++) {
             $data = [
+                'id' => rand(10000000, 99999999),
                 'nama' => $faker->name(),
                 'nominal' => $nominal[$i],
                 'jenis' => 'Hutang',
