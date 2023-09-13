@@ -64,7 +64,7 @@
                             <a href="/hutang">Hutang</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="component-badge.html">Piutang</a>
+                            <a href="/piutang">Piutang</a>
                         </li>
                     </ul>
                 </li>

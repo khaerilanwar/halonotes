@@ -3,30 +3,30 @@
 <?= $this->section("content"); ?>
 
 <div>
-    <button data-bs-toggle="modal" data-bs-target="#modalTambahHutang" type="button" class="mb-2 btn icon icon-lefy btn-success"><i data-feather="plus-circle"></i>
-        Tambah Hutang</button>
+    <button data-bs-toggle="modal" data-bs-target="#modalTambahPiutang" type="button" class="mb-2 btn icon icon-lefy btn-success"><i data-feather="plus-circle"></i>
+        Tambah Piutang</button>
 
-    <!-- MODAL TAMBAH DATA HUTANG -->
-    <div class="modal fade text-left" id="modalTambahHutang" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
+    <!-- MODAL TAMBAH DATA Piutang -->
+    <div class="modal fade text-left" id="modalTambahPiutang" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel33">Tambah Data Hutang</h4>
+                    <h4 class="modal-title" id="myModalLabel33">Tambah Data Piutang</h4>
                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <i data-feather="x"></i>
                     </button>
                 </div>
-                <form action="/hutang/tambah-hutang" method="post">
+                <form action="/piutang/tambah-piutang" method="post">
                     <div class="modal-body">
-                        <label>Kreditur</label>
+                        <label>Debitur</label>
                         <div class="form-group">
-                            <input type="text" name="kreditur" placeholder="Nama Kreditur" class="form-control" autocomplete="off">
+                            <input type="text" name="debitur" placeholder="Nama Debitur" class="form-control" autocomplete="off">
                         </div>
                         <label>Nominal</label>
                         <div class="form-group">
-                            <input type="text" id="angkaInputNominal" name="nominal" placeholder="Nominal Hutang" class="form-control" autocomplete="off">
+                            <input type="text" id="angkaInputNominal" name="nominal" placeholder="Nominal Piutang" class="form-control" autocomplete="off">
                         </div>
-                        <label>Tanggal Hutang</label>
+                        <label>Tanggal Piutang</label>
                         <div class="form-group">
                             <input type="date" name="tanggal" class="form-control">
                         </div>
@@ -48,8 +48,8 @@
 </div>
 
 <div class="list-group list-group-horizontal-sm mb-1 text-center">
-    <a class="list-group-item list-group-item-action active rounded-end rounded-4" href="/hutang">Terhutang</a>
-    <a class="list-group-item list-group-item-action rounded-start rounded-4" href="/hutang/riwayat">Riwayat</a>
+    <a class="list-group-item list-group-item-action active rounded-end rounded-4" href="/piutang">Dihutangkan</a>
+    <a class="list-group-item list-group-item-action rounded-start rounded-4" href="/piutang/riwayat">Riwayat</a>
 </div>
 
 <section class="section">
@@ -58,15 +58,15 @@
             <table class="table table-striped" id="table1">
                 <thead>
                     <tr>
-                        <th>Nama Kreditur</th>
+                        <th>Nama Debitur</th>
                         <th>Nominal</th>
-                        <th>Tanggal Hutang</th>
+                        <th>Tanggal Piutang</th>
                         <th>Status</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($hutang as $data) : ?>
+                    <?php foreach ($piutang as $data) : ?>
                         <tr>
                             <td><?= $data['nama']; ?></td>
                             <td><?= 'Rp. ' . number_format($data['nominal'], 0, ',', '.') ?></td>
@@ -84,27 +84,27 @@
         </div>
     </div>
 
-    <?php foreach ($hutang as $data) : ?>
-        <!--Modal Lunas Hutang -->
+    <?php foreach ($piutang as $data) : ?>
+        <!--Modal Lunas Piutang -->
         <div class="modal fade text-left" id="lunasModal-<?= $data['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel110" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
                 <div class="modal-content">
                     <div class="modal-header bg-success">
-                        <h5 class="modal-title white" id="myModalLabel110">Lunaskan Hutang
+                        <h5 class="modal-title white" id="myModalLabel110">Lunaskan Piutang
                         </h5>
                         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <i data-feather="x"></i>
                         </button>
                     </div>
                     <div class="modal-body my-2">
-                        Apakah Anda yakin akan melunasi hutang ini ?
+                        Apakah Anda yakin akan melunasi piutang ini ?
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
                             <i class="bx bx-x d-block d-sm-none"></i>
                             <span class="d-none d-sm-block">Batal</span>
                         </button>
-                        <form action="/hutang/lunas/<?= $data['id']; ?>" method="post" class="d-inline">
+                        <form action="/piutang/lunas/<?= $data['id']; ?>" method="post" class="d-inline">
                             <?= csrf_field(); ?>
                             <input type="hidden" name="_method" value="PUT">
                             <button type="submit" class="btn btn-success ml-1" data-bs-dismiss="modal">
