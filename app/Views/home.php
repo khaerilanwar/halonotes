@@ -2,6 +2,23 @@
 
 <?= $this->section('content'); ?>
 
+<span class="d-none" id="dataPiutangPertahun">
+    [
+    <?= $dataPertahun[0]; ?>,
+    <?= $dataPertahun[1]; ?>,
+    <?= $dataPertahun[2]; ?>,
+    <?= $dataPertahun[3]; ?>,
+    <?= $dataPertahun[4]; ?>,
+    <?= $dataPertahun[5]; ?>,
+    <?= $dataPertahun[6]; ?>,
+    <?= $dataPertahun[7]; ?>,
+    <?= $dataPertahun[8]; ?>,
+    <?= $dataPertahun[9]; ?>,
+    <?= $dataPertahun[10]; ?>,
+    <?= $dataPertahun[11]; ?>,
+    ]
+</span>
+
 <section class="row">
     <div class="col-12">
         <div class="row">
@@ -16,7 +33,7 @@
                             </div>
                             <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                 <h6 class="text-muted font-semibold">Total Peminjam</h6>
-                                <h6 class="font-extrabold mb-0">112.000</h6>
+                                <h6 class="font-extrabold mb-0"><?= $totalPeminjam; ?></h6>
                             </div>
                         </div>
                     </div>
@@ -78,7 +95,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Profile Visit</h4>
+                        <h4>Grafik Piutang Tahun <?= date("Y"); ?></h4>
                     </div>
                     <div class="card-body">
                         <div id="chart-profile-visit"></div>
@@ -88,5 +105,9 @@
         </div>
     </div>
 </section>
+
+<script>
+    var dataPertahun = <?= json_encode($dataPertahun); ?>;
+</script>
 
 <?= $this->endSection(); ?>

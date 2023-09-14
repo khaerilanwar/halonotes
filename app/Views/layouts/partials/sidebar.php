@@ -76,10 +76,10 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="component-alert.html">Kondangan</a>
+                            <a href="/kondangan">Kondangan</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="component-badge.html">Nikahan</a>
+                            <a href="/nikahan">Nikahan</a>
                         </li>
                     </ul>
                 </li>

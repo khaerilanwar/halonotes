@@ -1,3 +1,5 @@
+console.log(dataPertahun);
+
 var optionsProfileVisit = {
 	annotations: {
 		position: 'back'
@@ -15,8 +17,8 @@ var optionsProfileVisit = {
 	plotOptions: {
 	},
 	series: [{
-		name: 'sales',
-		data: [9,20,30,20,10,20,30,20,10,20,30,20]
+		name: 'piutang',
+		data: dataPertahun
 	}],
 	colors: '#435ebe',
 	xaxis: {

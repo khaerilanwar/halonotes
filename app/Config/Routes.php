@@ -24,3 +24,7 @@ $routes->get('/piutang', 'Piutang::index');
 $routes->get('/piutang/riwayat', 'Piutang::riwayatPiutang');
 $routes->put('/piutang/lunas/(:num)', 'Piutang::lunaskan/$1');
 $routes->post('/piutang/tambah-piutang', 'Piutang::tambahDataPiutang');
+
+// ROUTES HAJATAN PERNIKAHAN
+$routes->get('/kondangan', 'Kondangan::index');
+$routes->get('/nikahan', 'Nikahan::index');
