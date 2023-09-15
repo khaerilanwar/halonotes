@@ -27,4 +27,7 @@ $routes->post('/piutang/tambah-piutang', 'Piutang::tambahDataPiutang');
 
 // ROUTES HAJATAN PERNIKAHAN
 $routes->get('/kondangan', 'Kondangan::index');
+$routes->get('/kondangan/riwayat', 'Kondangan::riwayatKondangan');
+$routes->post('/kondangan/tambah-kondangan', 'Kondangan::tambahDataKondangan');
+$routes->post('/kondangan/lunaskan', 'Kondangan::lunaskan');
 $routes->get('/nikahan', 'Nikahan::index');

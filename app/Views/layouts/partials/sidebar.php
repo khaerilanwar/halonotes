@@ -69,7 +69,7 @@
                     </ul>
                 </li>
 
-                <li class="sidebar-item <?= (preg_match('/Kondangan/', $title) || preg_match('/Nikahan/', $title)) ? 'active' : '' ?> has-sub">
+                <li class="sidebar-item <?= (preg_match('/Kondangan/', $title) || preg_match('/Pernikahan/', $title)) ? 'active' : '' ?> has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-calendar-event-fill"></i>
                         <span>Hajatan</span>
@@ -87,7 +87,7 @@
                 <li class="sidebar-title">Akun</li>
 
                 <li class="sidebar-item <?= preg_match('/Profile/', $title) ? 'active' : '' ?> ">
-                    <a href="form-layout.html" class='sidebar-link'>
+                    <a href="#" class='sidebar-link'>
                         <i class="bi bi-person-lines-fill"></i>
                         <span>Profile</span>
                     </a>

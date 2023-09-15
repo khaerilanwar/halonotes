@@ -57,13 +57,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        var rupiah = document.getElementById('angkaInputNominal');
-        rupiah.addEventListener('keyup', function(e) {
-            // tambahkan 'Rp.' pada saat form di ketik
-            // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
-            rupiah.value = formatRupiah(this.value, 'Rp. ');
-        });
-
         /* Fungsi formatRupiah */
         function formatRupiah(angka, prefix) {
             var number_string = angka.replace(/[^,\d]/g, '').toString(),
@@ -93,6 +86,16 @@
         </script>
     <?php endif; ?>
 
+    <?php if (session()->getFlashdata('selesai')) : ?>
+        <script>
+            Swal.fire(
+                'Selesai!',
+                '<?= session()->getFlashdata('selesai'); ?>!',
+                'success'
+            )
+        </script>
+    <?php endif; ?>
+
     <?php if (session()->getFlashdata('tambahPiutang')) : ?>
         <script>
             Swal.fire(
@@ -108,6 +111,16 @@
             Swal.fire(
                 'Berhasil!',
                 '<?= session()->getFlashdata('tambahHutang'); ?>!',
+                'success'
+            )
+        </script>
+    <?php endif; ?>
+
+    <?php if (session()->getFlashdata('tambahKondangan')) : ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                '<?= session()->getFlashdata('tambahKondangan'); ?>!',
                 'success'
             )
         </script>

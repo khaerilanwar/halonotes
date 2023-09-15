@@ -2,9 +2,9 @@
 
 <?= $this->section('content'); ?>
 
-<div class="list-group list-group-horizontal-sm mb-1 text-center rounded-5">
-    <a class="list-group-item list-group-item-action" href="/hutang">Terhutang</a>
-    <a class="list-group-item list-group-item-action active" href="/hutang/riwayat">Riwayat</a>
+<div class="list-group list-group-horizontal-sm mb-1 text-center">
+    <a class="list-group-item list-group-item-action rounded-end rounded-4" href="/hutang">Terhutang</a>
+    <a class="list-group-item list-group-item-action active rounded-start rounded-4" href="/hutang/riwayat">Riwayat</a>
 </div>
 
 <section class="section">

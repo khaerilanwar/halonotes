@@ -5,22 +5,13 @@ namespace App\Controllers;
 class Home extends BaseController
 {
     protected $dataHutang;
+    protected $dataKondangan;
     public function __construct()
     {
         $this->dataHutang = \Config\Database::connect()->table('hutang');
+        $this->dataKondangan = \Config\Database::connect()->table('kondangan');
         helper('halo');
         cekLogin();
-    }
-
-    private function _piutangPerbulan()
-    {
-        for ($i = 1; $i <= 12; $i++) {
-            $bulan = sprintf("%02d", $i);
-            $minDate = date("Y") . '-' . $bulan . '-' . '01';
-            $maxDate = date("Y") . '-' . $bulan . '-' . '31';
-
-            // $query = $this->dataHutang->getWhere(['tanggal >=' => ]);
-        }
     }
 
     public function index(): string
@@ -28,6 +19,7 @@ class Home extends BaseController
         $totalHutang = $this->dataHutang->selectSum('nominal')->getWhere(['id_user' => $this->user['id'], 'jenis' => 'Hutang', 'status' => 'Belum Lunas'])->getRowArray();
         $totalPiutang = $this->dataHutang->selectSum('nominal')->getWhere(['id_user' => $this->user['id'], 'jenis' => 'Piutang', 'status' => 'Belum Lunas'])->getRowArray();
         $totalPeminjam = $this->dataHutang->select('nama')->distinct()->getWhere(['jenis' => 'Piutang', 'status' => 'Belum Lunas', 'id_user' => $this->user['id']])->getNumRows();
+        $totalKondangan = $this->dataKondangan->select('nama')->getWhere(['id_user' => $this->user['id']])->getNumRows();
 
         $dataPertahun = [];
         for ($i = 1; $i <= 12; $i++) {
@@ -52,6 +44,7 @@ class Home extends BaseController
             'totalHutang' => $totalHutang['nominal'],
             'totalPiutang' => $totalPiutang['nominal'],
             'totalPeminjam' => $totalPeminjam,
+            'totalKondangan' => $totalKondangan,
             'dataPertahun' => $dataPertahun
         ];
 
