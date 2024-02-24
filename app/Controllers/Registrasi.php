@@ -79,7 +79,7 @@ class Registrasi extends BaseController
 
         $data = [
             'nama' => htmlspecialchars($this->request->getPost('nama')),
-            'username' => htmlspecialchars($this->request->getPost('username')),
+            'username' => strtolower(htmlspecialchars($this->request->getPost('username'))),
             'password' => $password,
             'created_at' => Time::now('Asia/Jakarta'),
             'gambar' => 'default.png'

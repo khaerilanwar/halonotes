@@ -24,8 +24,9 @@ class Home extends BaseController
         $dataPertahun = [];
         for ($i = 1; $i <= 12; $i++) {
             $bulan = sprintf("%02d", $i);
-            $minDate = date("Y") . '-' . $bulan . '-' . '01';
-            $maxDate = date("Y") . '-' . $bulan . '-' . '31';
+            $year = $this->user['username'] == 'kakanwar' ? '2023' : date("Y");
+            $minDate = $year . '-' . $bulan . '-' . '01';
+            $maxDate = $year . '-' . $bulan . '-' . '31';
             // array_push($cobaArr, $minDate, $maxDate);
             $query = $this->dataHutang->getWhere(['tanggal >=' => $minDate, 'tanggal <=' => $maxDate, 'jenis' => 'Piutang', 'id_user' => $this->user['id']])->getResultArray();
 

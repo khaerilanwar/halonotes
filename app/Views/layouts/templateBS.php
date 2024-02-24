@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="/assets/css/pages/simple-datatables.css">
 
     <style>
+        .pointer {
+            cursor: default;
+        }
+
         /* Menghilangkan tanda panah pada input number */
         input[type="number"]::-webkit-inner-spin-button,
         input[type="number"]::-webkit-outer-spin-button {
@@ -57,6 +61,17 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
+        // If you want to use tooltips in your project, we suggest initializing them globally
+        // instead of a "per-page" level.
+        document.addEventListener('DOMContentLoaded', function() {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        }, false);
+    </script>
+
+    <script>
         /* Fungsi formatRupiah */
         function formatRupiah(angka, prefix) {
             var number_string = angka.replace(/[^,\d]/g, '').toString(),
@@ -81,6 +96,16 @@
             Swal.fire(
                 'Lunas!',
                 '<?= session()->getFlashdata('lunas'); ?>!',
+                'success'
+            )
+        </script>
+    <?php endif; ?>
+
+    <?php if (session()->getFlashdata('success')) : ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                '<?= session()->getFlashdata('success'); ?>!',
                 'success'
             )
         </script>

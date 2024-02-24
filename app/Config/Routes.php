@@ -31,3 +31,16 @@ $routes->get('/kondangan/riwayat', 'Kondangan::riwayatKondangan');
 $routes->post('/kondangan/tambah-kondangan', 'Kondangan::tambahDataKondangan');
 $routes->post('/kondangan/lunaskan', 'Kondangan::lunaskan');
 $routes->get('/nikahan', 'Nikahan::index');
+
+// ROUTES CATATAN PENGGUNAAN DANA
+$routes->get('/catatan', 'Catatan::index');
+$routes->get('/catatan/tambah', 'Catatan::tambah');
+$routes->post('/catatan/store', 'Catatan::storeNote');
+$routes->get('/catatan/(:any)', 'Catatan::detail/$1');
+$routes->delete('/catatan/hapus/(:num)', 'Catatan::hapus/$1');
+
+// ROUTES KATEGORI PRODUK BELI
+// UNTUK MENAMBAHKAN JENIS KATEGORI KE DALAM FITUR CATATAN
+$routes->get('/kategori', 'KategoriProdukBeli::index');
+$routes->post('/kategori/tambah', 'KategoriProdukBeli::storeKategori');
+$routes->delete('/kategori/hapus/(:num)', 'KategoriProdukBeli::hapus/$1');

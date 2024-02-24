@@ -5,8 +5,6 @@ namespace App\Controllers;
 use App\Models\KondanganModel;
 use CodeIgniter\I18n\Time;
 
-use function PHPSTORM_META\type;
-
 class Kondangan extends BaseController
 {
     protected $kondanganData;

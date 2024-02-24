@@ -121,6 +121,15 @@
 </section>
 
 <script>
+    var rupiah = document.getElementById('angkaInputNominal');
+    rupiah.addEventListener('keyup', function(e) {
+        // tambahkan 'Rp.' pada saat form di ketik
+        // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+        rupiah.value = formatRupiah(this.value, 'Rp. ');
+    });
+</script>
+
+<script>
     // If you want to use tooltips in your project, we suggest initializing them globally
     // instead of a "per-page" level.
     document.addEventListener('DOMContentLoaded', function() {

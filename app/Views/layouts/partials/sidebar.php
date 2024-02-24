@@ -84,6 +84,21 @@
                     </ul>
                 </li>
 
+                <li class="sidebar-item <?= (preg_match('/Catatan/', $title) || preg_match('/Penggunaan/', $title) || preg_match('/Kategori/', $title)) ? 'active' : '' ?> has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-cart-check-fill"></i>
+                        <span>Catatan Dana</span>
+                    </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item ">
+                            <a href="/catatan">Penggunaan</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="/kategori">Kategori Produk</a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="sidebar-title">Akun</li>
 
                 <li class="sidebar-item <?= preg_match('/Profile/', $title) ? 'active' : '' ?> ">
