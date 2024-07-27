@@ -27,6 +27,7 @@
             margin: 0;
         }
     </style>
+    <script src="https://kit.fontawesome.com/addf044e73.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -47,8 +48,24 @@
             <div class="page-content">
                 <?= $this->renderSection('content'); ?>
             </div>
+            <footer class="card p-4 pb-1">
+                <div class="footer clearfix mb-0 text-muted">
+                    <div class="float-start">
+                        <p><?= date('Y'); ?> &copy; Halo Notes!</p>
+                    </div>
+                    <div class="float-end">
+                        <p>
+                            Made with
+                            <span class="text-danger"><i class="bi bi-heart"></i></span> by
+                            <a href="https://khaerilanwar.github.io/">Khaeril Anwar</a>
+                        </p>
+                    </div>
+                </div>
+            </footer>
         </div>
     </div>
+
+
     <script src="/assets/js/bootstrap.js"></script>
     <script src="/assets/js/app.js"></script>
 
